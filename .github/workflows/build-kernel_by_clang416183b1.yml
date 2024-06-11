@@ -142,7 +142,7 @@ jobs:
         cp arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }} arch/${{ env.ARCH }}/configs/kernel-`date '+%Y%m%d%H%M%S'`_defconfig
         wget https://raw.githubusercontent.com/wajaran/lxc_ksu_kernel_action/picasso/patches/LXC-DOCKER-OPEN-CONFIG.sh
         chmod +x $GITHUB_WORKSPACE/kernel_workspace/android-kernel/LXC-DOCKER-OPEN-CONFIG.sh
-        sh $GITHUB_WORKSPACE/kernel_workspace/android-kernel/LXC-DOCKER-OPEN-CONFIG.sh arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }} -w
+        bash $GITHUB_WORKSPACE/kernel_workspace/android-kernel/LXC-DOCKER-OPEN-CONFIG.sh arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }} -w
         sed -i '/CONFIG_ANDROID_PARANOID_NETWORK/d' arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }}
         echo "# CONFIG_ANDROID_PARANOID_NETWORK is not set" >> arch/${{ env.ARCH }}/configs/${{ env.KERNEL_CONFIG }}
           
