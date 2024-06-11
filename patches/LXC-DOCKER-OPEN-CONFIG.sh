@@ -211,8 +211,8 @@ for c in $CONFIGS_ON;do
 done
 
 for c in $CONFIGS_EQ;do
-	lhs=$(bash -c 'awk -F= '{ print $1 }' <(echo $c)')
-	rhs=$(bash -c 'awk -F= '{ print $2 }' <(echo $c)')
+	lhs=$(echo "$c" | awk -F= '{ print $1 }')
+	lhs=$(echo "$c" | awk -F= '{ print $2 }')
 	if grep "^$c" "$FILE" >/dev/null;then
 		egreen "$c is already set correctly."
 		continue
