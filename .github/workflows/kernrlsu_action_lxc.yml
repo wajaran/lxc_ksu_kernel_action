@@ -22,31 +22,31 @@ jobs:
         echo "KERNEL_IMAGE_NAME=$(cat $CONFIG_ENV | grep -w "KERNEL_IMAGE_NAME" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "ARCH=$(cat $CONFIG_ENV | grep -w "ARCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "ADD_LOCALVERSION_TO_FILENAME=$(cat $CONFIG_ENV | grep -w "ADD_LOCALVERSION_TO_FILENAME" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo "EXTRA_CMDS='LD=ld.lld LLVM=1 LLVM_IAS=1'" >> $GITHUB_ENV
+        echo "EXTRA_CMDS=LD=ld.lld LLVM=1 LLVM_IAS=1" >> $GITHUB_ENV
         echo "USE_CUSTOM_CLANG=$(cat $CONFIG_ENV | grep -w "USE_CUSTOM_CLANG" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "CUSTOM_CLANG_SOURCE=$(cat $CONFIG_ENV | grep -w "CUSTOM_CLANG_SOURCE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "CUSTOM_CLANG_BRANCH=$(cat $CONFIG_ENV | grep -w "CUSTOM_CLANG_BRANCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo "CUSTOM_CMDS=CLANG_TRIPLE='aarch64-linux-gnu-'" >> $GITHUB_ENV
-        echo "CLANG_BRANCH='master-kernel-build-2022'" >> $GITHUB_ENV
-        echo "CLANG_VERSION='r450784e'" >> $GITHUB_ENV
-        echo "ENABLE_GCC_ARM64='true'" >> $GITHUB_ENV
-        echo "ENABLE_GCC_ARM32='true'" >> $GITHUB_ENV
-        echo "USE_CUSTOM_GCC_64=/false'" >> $GITHUB_ENV
+        echo "CUSTOM_CMDS=CLANG_TRIPLE=aarch64-linux-gnu-" >> $GITHUB_ENV
+        echo "CLANG_BRANCH=master-kernel-build-2022" >> $GITHUB_ENV
+        echo "CLANG_VERSION=r450784e" >> $GITHUB_ENV
+        echo "ENABLE_GCC_ARM64=true" >> $GITHUB_ENV
+        echo "ENABLE_GCC_ARM32=true" >> $GITHUB_ENV
+        echo "USE_CUSTOM_GCC_64=false" >> $GITHUB_ENV
         echo "CUSTOM_GCC_64_SOURCE=$(cat $CONFIG_ENV | grep -w "CUSTOM_GCC_64_SOURCE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "CUSTOM_GCC_64_BRANCH=$(cat $CONFIG_ENV | grep -w "CUSTOM_GCC_64_BRANCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo "CUSTOM_GCC_64_BIN='aarch64-linux-android-'" >> $GITHUB_ENV
-        echo "USE_CUSTOM_GCC_32='false'" >> $GITHUB_ENV
+        echo "CUSTOM_GCC_64_BIN=aarch64-linux-android-" >> $GITHUB_ENV
+        echo "USE_CUSTOM_GCC_32=false" >> $GITHUB_ENV
         echo "CUSTOM_GCC_32_SOURCE=$(cat $CONFIG_ENV | grep -w "CUSTOM_GCC_32_SOURCE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "CUSTOM_GCC_32_BRANCH=$(cat $CONFIG_ENV | grep -w "CUSTOM_GCC_32_BRANCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo "CUSTOM_GCC_32_BIN='arm-linux-androideabi-'" >> $GITHUB_ENV
+        echo "CUSTOM_GCC_32_BIN=arm-linux-androideabi-" >> $GITHUB_ENV
         echo "ENABLE_KERNELSU=$(cat $CONFIG_ENV | grep -w "ENABLE_KERNELSU" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "KERNELSU_TAG=$(cat $CONFIG_ENV | grep -w "KERNELSU_TAG" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo "ADD_KPROBES_CONFIG='false'" >> $GITHUB_ENV
-        echo "DISABLE-LTO='false'" >> $GITHUB_ENV
-        echo "ADD_OVERLAYFS_CONFIG='false'" >> $GITHUB_ENV
-        echo "DISABLE_CC_WERROR='false'" >> $GITHUB_ENV
-        echo "APPLY_KSU_PATCH='false'" >> $GITHUB_ENV
-        echo "USE_CUSTOM_ANYKERNEL3='false'" >> $GITHUB_ENV
+        echo "ADD_KPROBES_CONFIG=false" >> $GITHUB_ENV
+        echo "DISABLE-LTO=false" >> $GITHUB_ENV
+        echo "ADD_OVERLAYFS_CONFIG=false" >> $GITHUB_ENV
+        echo "DISABLE_CC_WERROR=false" >> $GITHUB_ENV
+        echo "APPLY_KSU_PATCH=false" >> $GITHUB_ENV
+        echo "USE_CUSTOM_ANYKERNEL3=false" >> $GITHUB_ENV
         echo "CUSTOM_ANYKERNEL3_SOURCE=$(cat $CONFIG_ENV | grep -w "CUSTOM_ANYKERNEL3_SOURCE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "CUSTOM_ANYKERNEL3_BRANCH=$(cat $CONFIG_ENV | grep -w "CUSTOM_ANYKERNEL3_BRANCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "ENABLE_CCACHE=$(cat $CONFIG_ENV | grep -w "ENABLE_CCACHE" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
