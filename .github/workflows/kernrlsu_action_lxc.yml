@@ -285,7 +285,7 @@ jobs:
         fi
         wget https://raw.githubusercontent.com/lxc/lxc/main/src/lxc/cmd/lxc-checkconfig.in -O lxc-checkconfig
         chmod a+x lxc-checkconfig
-        CONFIG=out/.config lxc-checkconfig
+        CONFIG=out/.config ./lxc-checkconfig
 
     - name: Check a kernel output files
       run: |
