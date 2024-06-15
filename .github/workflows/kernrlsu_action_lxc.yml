@@ -57,7 +57,7 @@ jobs:
         echo "KSU_EXPECTED_HASH=$(cat $CONFIG_ENV | grep -w "KSU_EXPECTED_HASH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "REMOVE_UNUSED_PACKAGES=true" >> $GITHUB_ENV
         echo "ENABLE_LXC=$(cat $CONFIG_ENV | grep -w "ENABLE_LXC" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-        echo ${env.REMOVE_UNUSED_PACKAGES}
+        
     - name: Remove unused packages
       if: env.REMOVE_UNUSED_PACKAGES == 'true'
       uses: jlumbroso/free-disk-space@main
