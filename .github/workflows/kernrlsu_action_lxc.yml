@@ -259,7 +259,9 @@ jobs:
         if [ -f $GITHUB_WORKSPACE/kernel_workspace/android-kernel/net/netfilter/xt_qtaguid.c ]; then
             patch -p0 < $GITHUB_WORKSPACE/kernel_workspace/android-kernel/utils/xt_qtaguid.patch
         fi
-        
+        wget https://raw.githubusercontent.com/lxc/lxc/main/src/lxc/cmd/lxc-checkconfig.in -O lxc-checkconfig
+        chmod a+x lxc-checkconfig
+        CONFIG=out/.config lxc-checkconfig
     - name: Setup ccache
       if: env.ENABLE_CCACHE == 'true'
       uses: hendrikmuhs/ccache-action@v1.2
