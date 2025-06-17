@@ -107,16 +107,13 @@ jobs:
       if: env.ENABLE_KERNELSU == 'true'
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
-        mkdir ./KernelSU
-        cd KernelSU
         curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s ${{ env.KERNELSU_TAG }}
         echo "UPLOADNAME=-sukisu" >> $GITHUB_ENV
 
     - name: Setup susfs
       if: 1==2
       run: |
-        mkdir $GITHUB_WORKSPACE/kernel_workspace/android-kernel/KernelSU
-        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel/KernelSU
+        cd $GITHUB_WORKSPACE/kernel_workspace/android-kernel
         curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
         
     - name: Setup Configuration for Kernel
