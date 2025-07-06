@@ -290,3 +290,10 @@ jobs:
       with:
         name: boot${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
         path: kernel_workspace/boot.img
+        
+    - name: Upload config
+      if: true == true
+      uses: actions/upload-artifact@v4
+      with:
+        name: config${{ env.UPLOADNAME }}-${{ env.DEVICE }}-${{ env.BUILD_TIME }}
+        path: kernel_workspace/android-kernel/out/.config
